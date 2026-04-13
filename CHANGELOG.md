@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 10.5.0 “Each Endeavouring, All Achieving”
 
-- Added `mask-position-x` and `mask-position-y` support (by @Bilge).
+- Added `mask-position-x` and `mask-position-y` support (by @toporek).
 
 ## 10.4.27
 
