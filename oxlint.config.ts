@@ -16,7 +16,8 @@ export default defineConfig({
     {
       files: ['*.d.ts'],
       rules: {
-        'typescript/consistent-type-imports': 'off'
+        'typescript/consistent-type-imports': 'off',
+        'typescript/no-unnecessary-type-parameters': 'off'
       }
     }
   ]
