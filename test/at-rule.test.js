@@ -7,9 +7,7 @@ let AtRule = require('../lib/at-rule')
 test('adds prefixes', () => {
   let keyframes = new AtRule('@keyframes', ['-moz-', '-ms-'])
 
-  let css = parse(
-    '@-moz-keyframes b {} ' + '@-ms-keyframes a {} ' + '@keyframes a {}'
-  )
+  let css = parse('@-moz-keyframes b {} @-ms-keyframes a {} @keyframes a {}')
   keyframes.process(css.last)
   equal(
     css.toString(),

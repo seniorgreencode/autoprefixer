@@ -1131,8 +1131,7 @@ test('ignores values for CSS3PIE props', () => {
 })
 
 test('add prefix for backface-visibility for Safari 9', () => {
-  let input =
-    'a{ ' + 'backface-visibility: hidden; ' + 'transform-style: preserve-3d }'
+  let input = 'a{ backface-visibility: hidden; transform-style: preserve-3d }'
   let ap = autoprefixer({
     flexbox: false,
     overrideBrowserslist: ['Safari 9']

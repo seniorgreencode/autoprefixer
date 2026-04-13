@@ -52,7 +52,7 @@ test('returns before with cascade', () => {
 })
 
 test('removes cascade', () => {
-  let css = parse('a {\n' + '  -moz-tab-size: 4;\n' + '       tab-size: 4 }')
+  let css = parse('a {\n  -moz-tab-size: 4;\n       tab-size: 4 }')
   let decl = css.first.nodes[1]
   tabsize.restoreBefore(decl)
   equal(decl.raws.before, '\n  ')

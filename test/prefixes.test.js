@@ -145,7 +145,7 @@ test('checks prefix group', () => {
 })
 
 test('checks prefix groups', () => {
-  let css = parse('a { -ms-a: 1; -o-a: 1; ' + 'a: -o-calc(1); a: 1; a: 2 }')
+  let css = parse('a { -ms-a: 1; -o-a: 1; a: -o-calc(1); a: 1; a: 2 }')
   let props = []
 
   empty.group(css.first.first).down(i => props.push(i.prop))
@@ -175,7 +175,7 @@ test('checks prefix group', () => {
 })
 
 test('checks prefix groups', () => {
-  let css = parse('a { a: 2; -ms-a: 1; ' + '-o-a: 1; a: -o-calc(1); a: 1  }')
+  let css = parse('a { a: 2; -ms-a: 1; -o-a: 1; a: -o-calc(1); a: 1  }')
   let props = []
 
   empty.group(css.first.nodes[4]).up(i => props.push(i.prop))

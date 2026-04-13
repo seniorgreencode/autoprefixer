@@ -13,7 +13,7 @@ test('returns true on last rule', () => {
 })
 
 test('stops on another type', () => {
-  let css = parse('::-moz-selection {} ' + '@keyframes anim {} ::selection {}')
+  let css = parse('::-moz-selection {} @keyframes anim {} ::selection {}')
   is(old.isHack(css.first), true)
 })
 
@@ -23,7 +23,7 @@ test('stops on another selector', () => {
 })
 
 test('finds unprefixed selector', () => {
-  let css = parse('::-moz-selection {} ' + '::-o-selection {} ::selection {}')
+  let css = parse('::-moz-selection {} ::-o-selection {} ::selection {}')
   is(old.isHack(css.first), false)
 })
 

@@ -2,26 +2,19 @@
   "name": "autoprefixer",
   "version": "10.4.27",
   "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
-  "engines": {
-    "node": "^10 || ^12 || >=14"
-  },
   "keywords": [
     "autoprefixer",
     "css",
-    "prefix",
     "postcss",
-    "postcss-plugin"
+    "postcss-plugin",
+    "prefix"
   ],
-  "scripts": {
-    "unit": "uvu . '\\.test\\.js$'",
-    "test:coverage": "c8 node node_modules/uvu/bin.js . '\\.test\\.js$'",
-    "test:lint": "eslint . bin/*",
-    "test:size": "size-limit",
-    "test": "pnpm run /^test:/"
+  "bugs": {
+    "url": "https://github.com/postcss/autoprefixer/issues"
   },
-  "main": "lib/autoprefixer.js",
-  "bin": "bin/autoprefixer",
-  "types": "lib/autoprefixer.d.ts",
+  "license": "MIT",
+  "author": "Andrey Sitnik <andrey@sitnik.ru>",
+  "repository": "postcss/autoprefixer",
   "funding": [
     {
       "type": "opencollective",
@@ -36,14 +29,15 @@
       "url": "https://github.com/sponsors/ai"
     }
   ],
-  "author": "Andrey Sitnik <andrey@sitnik.ru>",
-  "license": "MIT",
-  "repository": "postcss/autoprefixer",
-  "bugs": {
-    "url": "https://github.com/postcss/autoprefixer/issues"
-  },
-  "peerDependencies": {
-    "postcss": "^8.1.0"
+  "bin": "bin/autoprefixer",
+  "main": "lib/autoprefixer.js",
+  "types": "lib/autoprefixer.d.ts",
+  "scripts": {
+    "unit": "uvu . '\\.test\\.js$'",
+    "test:coverage": "c8 node node_modules/uvu/bin.js . '\\.test\\.js$'",
+    "test:lint": "oxlint . bin/*",
+    "test:size": "size-limit",
+    "test": "pnpm run /^test:/"
   },
   "dependencies": {
     "browserslist": "^4.28.1",
@@ -53,24 +47,22 @@
     "postcss-value-parser": "^4.2.0"
   },
   "devDependencies": {
-    "@logux/eslint-config": "^57.0.2",
+    "@logux/oxc-configs": "^0.3.3",
     "@size-limit/preset-small-lib": "12.0.0",
     "actions-up": "^1.12.0",
     "c8": "^11.0.0",
     "clean-publish": "^6.0.3",
-    "eslint": "^10.0.2",
+    "eslint-plugin-prefer-let": "^4.2.2",
     "nanospy": "^1.0.0",
+    "oxlint": "^1.59.0",
+    "oxlint-tsgolint": "^0.20.0",
     "postcss": "^8.5.6",
     "size-limit": "^12.0.0",
+    "typescript": "^6.0.2",
     "uvu": "^0.5.6"
   },
-  "prettier": {
-    "arrowParens": "avoid",
-    "jsxSingleQuote": false,
-    "quoteProps": "consistent",
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "none"
+  "peerDependencies": {
+    "postcss": "^8.1.0"
   },
   "size-limit": [
     {
@@ -78,24 +70,27 @@
     }
   ],
   "c8": {
+    "check-coverage": true,
+    "clean": true,
     "exclude": [
       "test/*"
     ],
     "lines": 100,
-    "check-coverage": true,
     "reporter": [
       "text",
       "lcov"
     ],
-    "skip-full": true,
-    "clean": true
+    "skip-full": true
   },
-  "clean-publish": {
-    "cleanDocs": true
+  "engines": {
+    "node": "^10 || ^12 || >=14"
   },
   "pnpm": {
     "patchedDependencies": {
       "yargs@17.7.2": "patches/yargs@17.7.2.patch"
     }
+  },
+  "clean-publish": {
+    "cleanDocs": true
   }
 }

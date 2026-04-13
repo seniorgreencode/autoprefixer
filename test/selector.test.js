@@ -27,9 +27,7 @@ test('creates regexp without prefix', () => {
 })
 
 test('checks rule selectors', () => {
-  let css = parse(
-    'body .selection {}, ' + ':::selection {}, body ::selection {}'
-  )
+  let css = parse('body .selection {}, :::selection {}, body ::selection {}')
   is(selector.check(css.nodes[0]), false)
   is(selector.check(css.nodes[1]), false)
   is(selector.check(css.nodes[2]), true)
@@ -74,7 +72,7 @@ test('returns false on first element', () => {
 })
 
 test('stops on another type', () => {
-  let css = parse('::-moz-selection {} ' + '@keyframes anim {} ::selection {}')
+  let css = parse('::-moz-selection {} @keyframes anim {} ::selection {}')
   is(selector.already(css.nodes[2], prefixeds, '-moz-'), false)
 })
 
@@ -84,7 +82,7 @@ test('stops on another selector', () => {
 })
 
 test('finds prefixed even if unknown prefix is between', () => {
-  let css = parse('::-moz-selection {} ' + '::-o-selection {} ::selection {}')
+  let css = parse('::-moz-selection {} ::-o-selection {} ::selection {}')
   is(selector.already(css.nodes[2], prefixeds, '-moz-'), true)
 })
 

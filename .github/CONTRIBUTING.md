@@ -2,16 +2,14 @@
 
 # Contributing to Autoprefixer
 
-* [Filing Issues](#filing-issues)
-* [Getting Started](#getting-started)
-* [Adding a Prefix](#adding-a-prefix)
-
+- [Filing Issues](#filing-issues)
+- [Getting Started](#getting-started)
+- [Adding a Prefix](#adding-a-prefix)
 
 ## Filing Issues
 
 - If you have problems with the output CSS from Autoprefixer;
-you’ll need to post:
-
+  you’ll need to post:
   1. Input CSS.
   2. Output CSS.
   3. Expected output CSS.
@@ -20,7 +18,6 @@ you’ll need to post:
   5. Run `npm ls | grep autoprefixer` and check output.
 
 - If Autoprefixer throws error:
-
   1. Input CSS.
   2. Browserslist config.
   3. Error stacktrace (copy and paste the error message that you get
@@ -28,21 +25,19 @@ you’ll need to post:
   4. Run `npm ls | grep autoprefixer` and check output.
   5. Run `npm ls | grep postcss` and check output.
 
-
 ## Getting Started
 
 Before you begin contributing make sure you have a [GitHub account].
 
-* [Fork the repository](https://github.com/postcss/autoprefixer)
-* Clone a copy of it to your computer:
+- [Fork the repository](https://github.com/postcss/autoprefixer)
+- Clone a copy of it to your computer:
   `git clone https://github.com/USERNAME/autoprefixer` (replace `USERNAME`
   to your GitHub name).
-* Ensure that you have the [pnpm](https://pnpm.io/) package manager
+- Ensure that you have the [pnpm](https://pnpm.io/) package manager
   installed.
-* Run `pnpm install` this will install all dependencies needed to run tests.
+- Run `pnpm install` this will install all dependencies needed to run tests.
 
 [GitHub account]: https://github.com/signup/free
-
 
 ## Adding a Prefix
 
@@ -69,7 +64,7 @@ on [Can I use](https://caniuse.com/).
    ```
 
 3. If the prefix is simple (`-webkit-` for Safari, `-moz-` for Firefox,
-  all use the same syntax) go to step 8.
+   all use the same syntax) go to step 8.
 
 4. If you need some non-standard behavior for the prefix (`-webkit-` prefix
    for Firefox or different syntax for different browsers) you will need
